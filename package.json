@@ -1,0 +1,11 @@
+{
+  "name": "motivation-khojo-backend",
+  "version": "1.0.0",
+  "description": "Backend for motivation-khojo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "abantoo",
+  "license": "ISC"
+}
