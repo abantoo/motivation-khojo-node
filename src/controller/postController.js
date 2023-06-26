@@ -1,7 +1,7 @@
 // import FeedModel from "../model/post";
 
 
-export default class FeedbackController {
+export default class PostController {
     static async savePost(req, res) {
         // const email = req.body.email;
         // const feedback = req.body.feedback;
