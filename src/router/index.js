@@ -3,8 +3,10 @@ import postController from "../controller/postController";
 
 const router = express.Router();
 
-router.get("/", postController.getAllMotivations);
+router.get("/", postController.getAllPosts);
 
-router.post("/", postController.addMotivation);
+router.post("/", postController.savePost);
+
+router.put('/', postController.editPost);
 
 module.exports = router;
