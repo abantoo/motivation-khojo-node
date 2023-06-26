@@ -1,8 +1,6 @@
-// import FeedModel from "../model/post";
-
-
 export default class PostController {
     static async savePost(req, res) {
+
         // const email = req.body.email;
         // const feedback = req.body.feedback;
         // await FeedModel.addMotivation({ email, feedback });
@@ -12,6 +10,7 @@ export default class PostController {
     };
 
     static async getAllPosts(req, res) {
+        res.send("hello");
         // try {
         //     const result = FeedModel.getAllMotivations();
         //     res.send(result);

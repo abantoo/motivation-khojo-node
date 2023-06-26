@@ -1,4 +1,6 @@
 {
     "username" : "admin",
-    "password": "admin"
+    "password": "admin",
+    "cluster": "test",
+    "id": "id"
 }

@@ -1,12 +1,13 @@
 import express from "express";
-import postController from "../controller/postController";
+// import postController from "../controller/postController";
+import PostController from "../controller/postController.js";
 
 const router = express.Router();
 
-router.get("/", postController.getAllPosts);
+router.get("/", PostController.getAllPosts);
 
-router.post("/", postController.savePost);
+router.post("/", PostController.savePost);
 
-router.put('/', postController.editPost);
+router.put('/', PostController.editPost);
 
 module.exports = router;
