@@ -23,15 +23,24 @@ app.use(
 app.use("/", router);
 
 try {
-
+  console.info(
+    chalk.black.bgYellowBright("Waiting for the connection from the database")
+  );
   const connection = await mongoose.connect(uri);
 
   if (connection) {
+    console.info(
+      chalk.black.bgGreen("Connected to the Motivation-Khojo database")
+    );
     app.listen(port, () =>
       console.log(
-        chalk.redBright("This app listening at"),
-        chalk.whiteBright.bgRedBright.bold(`http://localhost:${port}`)
+        chalk.cyanBright("This app listening at"),
+        chalk.whiteBright.bgCyanBright.bold(`http://localhost:${port}`)
       )
+    );
+  } else {
+    console.info(
+      chalk.black.bgRedBright("Connection failed")
     );
   }
 } catch (e) {
