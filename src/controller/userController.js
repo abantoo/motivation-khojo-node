@@ -1,12 +1,17 @@
 export default class UserController {
     static async createUser(req, res) {
 
-        // const email = req.body.email;
-        // const feedback = req.body.feedback;
-        // await FeedModel.addMotivation({ email, feedback });
-        // res.json({
-        //     message: "successfully updated new feed",
-        // });
+        const email = req.body.email;
+        const password = req.body.password;
+        const username = req.body.username;
+
+        const user = await UserModel.saveUser({ email, feedback });
+
+        if (user) {
+            res.json({
+                message: `successfully created user ${user}`,
+            });
+        }
     };
 
     static async updateUser(req, res) {
