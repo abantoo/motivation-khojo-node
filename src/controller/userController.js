@@ -5,7 +5,7 @@ export default class UserController {
         const password = req.body.password;
         const username = req.body.username;
 
-        const user = await UserModel.saveUser({ email, feedback });
+        const user = await UserModel.saveUser({ email, username, password });
 
         if (user) {
             res.json({
@@ -25,7 +25,7 @@ export default class UserController {
         // }
     };
 
-    static async getAllUsers(req, res) {
+    static async getUsers(req, res) {
         // try {
         //     const result = FeedModel.getAllMotivations();
         //     res.send(result);
@@ -34,4 +34,12 @@ export default class UserController {
         //     console.log(error);
         // }
     };
+
+    static async getUser(req, res) {
+        try {
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
 }
