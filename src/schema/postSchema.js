@@ -11,6 +11,10 @@ export default postSchema = new mongoose.Schema({
     image: {
         type: String,
     },
+    user: {
+        type: String,
+        ref: 'User'
+    }
 }, {
     timestamps: true
 });
