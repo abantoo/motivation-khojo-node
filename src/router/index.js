@@ -9,6 +9,4 @@ router.post("/", PostController.savePost);
 
 router.put('/', PostController.editPost);
 
-// module.exports = router;
-
 export default router;
