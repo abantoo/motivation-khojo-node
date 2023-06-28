@@ -42,4 +42,12 @@ export default class UserController {
             console.error(error);
         }
     }
+
+    static async deleteUser(req, res) {
+        try {
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
 }
