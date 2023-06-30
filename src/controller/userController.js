@@ -5,7 +5,7 @@ export default class UserController {
         const password = req.body.password;
         const username = req.body.username;
 
-        const user = await UserModel.saveUser({ email, username, password });
+        const user = await UserModel.create({ email, username, password });
 
         if (user) {
             res.json({
