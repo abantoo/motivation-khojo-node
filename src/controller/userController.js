@@ -41,25 +41,39 @@ export default class UserController {
     static async getUsers(req, res) {
         const users = await UserModel.getUsers();
         if (!users) {
-            console.log('No users');
+            res.json({
+                message: "No users"
+            });
+            return;
         }
 
         res.json({ users });
     };
 
     static async getUser(req, res) {
-        try {
-
-        } catch (error) {
-            console.error(error);
+        const userId = req.body.userId;
+        const user = await UserModel.getUsers(userId);
+        if (!users) {
+            res.json({
+                message: "User not found"
+            });
+            return;
         }
+
+        res.json({ user });
     }
 
     static async deleteUser(req, res) {
-        try {
+        const userId = req.body.userId;
+        const deletedUser = await UserModel.deleteUser(userId);
 
-        } catch (error) {
-            console.error(error);
+        if (!deletedUser) {
+            res.json({
+                message: "Deletion failed"
+            });
+            return;
         }
+
+        res.json({ deletedUser });
     }
 }
