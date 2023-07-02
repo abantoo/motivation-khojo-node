@@ -64,10 +64,16 @@ export default class UserController {
     }
 
     static async deleteUser(req, res) {
-        try {
+        const userId = req.body.userId;
+        const deletedUser = await UserModel.deleteUser(userId);
 
-        } catch (error) {
-            console.error(error);
+        if (!deletedUser) {
+            res.json({
+                message: "Deletion failed"
+            });
+            return;
         }
+
+        res.json({ deletedUser });
     }
 }
