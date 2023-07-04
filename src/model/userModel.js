@@ -23,8 +23,9 @@ export default class UserModel {
         return result;
     }
 
-    static async getUser(userParam) {
-        const result = await User.findOne().lean().exec();
+    static async getUser(userId) {
+        const filter = { _id: userId };
+        const result = await User.findOne(filter).lean().exec();
         return result;
     }
 
