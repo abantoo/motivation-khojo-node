@@ -8,19 +8,24 @@ export default class UserModel {
     }
 
     // TODO: handle edit
-    static async updateUser(userUpdateData) {
-        const result = await User.findOne().lean().exec();
+    static async updateUser(userId, userUpdateData) {
+
+        const filter = { _id: userUpdateData }
+        const update = userUpdateData;
+        const result = await User.findOneAndUpdate(filter, update).lean().exec();
         return result;
     }
 
     // TODO: handle delete
     static async deleteUser(userId) {
-        const result = await User.findOne().lean().exec();
+        const filter = { _id: userId };
+        const result = await User.deleteOne(filter).lean().exec();
         return result;
     }
 
-    static async getUser(userParam) {
-        const result = await User.findOne().lean().exec();
+    static async getUser(userId) {
+        const filter = { _id: userId };
+        const result = await User.findOne(filter).lean().exec();
         return result;
     }
 
