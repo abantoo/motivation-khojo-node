@@ -18,7 +18,8 @@ export default class UserModel {
 
     // TODO: handle delete
     static async deleteUser(userId) {
-        const result = await User.findOne().lean().exec();
+        const filter = { _id: userId };
+        const result = await User.deleteOne(filter).lean().exec();
         return result;
     }
 
