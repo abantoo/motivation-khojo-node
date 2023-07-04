@@ -8,8 +8,11 @@ export default class UserModel {
     }
 
     // TODO: handle edit
-    static async updateUser(userUpdateData) {
-        const result = await User.findOne().lean().exec();
+    static async updateUser(userId, userUpdateData) {
+
+        const filter = { _id: userUpdateData }
+        const update = userUpdateData;
+        const result = await User.findOneAndUpdate(filter, update).lean().exec();
         return result;
     }
 
