@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export default postSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     username: {
         type: String,
         required: true,
@@ -25,3 +25,5 @@ export default postSchema = new mongoose.Schema({
 }, {
     timestamps: true
 });
+
+export default userSchema;

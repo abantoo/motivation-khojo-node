@@ -1,4 +1,4 @@
-import UserModel from "../model/userModel";
+import UserModel from "../model/userModel.js";
 
 export default class UserController {
     static async createUser(req, res) {
@@ -22,9 +22,10 @@ export default class UserController {
     };
 
     static async updateUser(req, res) {
+        const userId = req.userId;
         const payload = req.body;
 
-        const updatedUser = await UserModel.updateUser(payload);
+        const updatedUser = await UserModel.updateUser(userId, payload);
 
         if (!updatedUser) {
             res.json({
